@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% load static %} {% block title %} الصفحة الرئيسة {%
+endblock title %} {% block content %}
+<div class="container">
+	<div class="flex">
+		<div class="menu" data-type=".chicken_sandwich">
+			<img src="{% static "images/edit1.jpeg" %}" alt=""/>
+		</div>
+		<div class="menu" data-type=".burger_sandwich">
+			<img src="{% static "images/edit2.jpeg" %}" alt=""/> {# فرايز#}
+		</div>
+		<div class="menu" data-type=".three">
+			<img src="{% static "images/edit3.jpeg" %}" alt=""/>
+		</div>
+		<div class="menu" data-type=".four">
+			<img src="{% static "images/edit4.jpeg" %}" alt=""/>
+		</div>
+		<div class="menu" data-type=".four">
+			<img src="{% static "images/edit4.jpeg" %}" alt=""/>
+		</div>
+		<div class="menu" data-type=".four">
+			<img src="{% static "images/edit4.jpeg" %}" alt=""/>
+		</div>
+	</div>
+	<div class="items chicken_sandwich">
+		{% for menu in chicken %}
+
+		<form class="flex-item">
+			<div class="item">
+				<input
+					class="title"
+					type="text"
+					value="برجر أند تشبكن"
+					name="name"
+					readonly
+				/>
+				<input type="text" name="price" hidden />
+				<p class="details">
+					طبقة من صدور التجاد المقرمشنة وطبقة من بجر البيف المشوي مع صوض
+					الكاوبوي والشير ويضاف شرالح الخس والطماطم الخيار المخل
+				</p>
+			</div>
+			<div class="quantity">
+				<div class="add"><i class="fas fa-plus"></i></div>
+				<input type="text" class="show" readonly />
+				<div class="minus"><i class="fas fa-minus"></i></div>
+			</div>
+			<button>اضافة</button>
+		</form>
+		{% endfor %}
+	</div>
+	<div class="items burger_sandwich">
+		{% for menu in meat %}
+		<form class="flex-item">
+			<div class="item">
+				<input
+					class="title"
+					type="text"
+					value="برجر أند تشبكن"
+					name="name"
+					readonly
+				/>
+				<input type="text" name="price" hidden />
+				<p class="details">
+					طبقة من صدور التجاد المقرمشنة وطبقة من بجر البيف المشوي مع صوض
+					الكاوبوي والشير ويضاف شرالح الخس والطماطم الخيار المخل
+				</p>
+			</div>
+			<div class="quantity">
+				<div class="add"><i class="fas fa-plus"></i></div>
+				<input type="text" class="show" readonly />
+				<div class="minus"><i class="fas fa-minus"></i></div>
+			</div>
+			<button>اضافة</button>
+		</form>
+		{% endfor %}
+	</div>
+</div>
+{% endblock content %}
