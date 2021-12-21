@@ -2,8 +2,9 @@
 
 let items = document.querySelectorAll(".delete");
 
+
 items.forEach((el) => {
-	el.onclick = function () {
+	el.onclick = setTimeout(function () {
 		el.parentElement.remove();
-	};
+	},1000)
 });
