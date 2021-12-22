@@ -10,7 +10,7 @@ def index(request):
         name = data.get("name")
         quantity = data.get("quantity")
         price = data.get("price")
-        Order.objects.create(name=name, quantity=quantity, price=price)
+        Order.objects.create(name=name, quantity=quantity, price=float(price)*int(quantity))
 
         HttpResponseRedirect("home")
     context = {
