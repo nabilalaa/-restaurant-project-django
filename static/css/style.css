@@ -77,6 +77,7 @@ main {
     margin-bottom: 10px;
     cursor: pointer;
     border: 3px solid #1e2001;
+    padding: 10px;
 }
 
 .items {

@@ -12,7 +12,7 @@ def index(request):
     if request.method == "POST":
         if name and quantity and price:
             Order.objects.create(name=name, quantity=quantity, price=float(price) * int(quantity))
-            Calc.objects.create(name=name, price=price)
+            Calc.objects.create(name=name)
     context = {
         "chicken": Menu.objects.filter(category="chicken"),
         "meat": Menu.objects.filter(category="meat"),
@@ -29,7 +29,7 @@ def receipt(request):
     print(Calc.objects.all())
 
     Tlist = []
-    for i in Calc.objects.all():
+    for i in Order.objects.all():
         print(i.price)
         Tlist.append(i.price)
         print(Tlist)

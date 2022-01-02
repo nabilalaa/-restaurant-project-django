@@ -23,7 +23,7 @@ class Order(models.Model):
 
 class Calc(models.Model):
     name = models.CharField(max_length=100,null=True)
-    price = models.FloatField(null=True)
+    # price = models.FloatField(null=True)
     total = models.FloatField(null=True)
 
     def __str__(self):
