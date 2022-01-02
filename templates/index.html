@@ -28,7 +28,7 @@
         </div>
         <div class="items chicken_sandwich">
             {% for menu in chicken %}
-                <form method="post" class="flex-item">
+                <form method="POST" class="flex-item">
                     {% csrf_token %}
                     <div class="item">
                         <input
@@ -55,7 +55,8 @@
         </div>
         <div class="items burger_sandwich">
             {% for menu in meat %}
-                <form class="flex-item">
+                <form method="POST" class="flex-item">
+                    {% csrf_token %}
                     <div class="item">
                         <input
                                 class="title"
@@ -81,12 +82,13 @@
         </div>
         <div class="items fries">
             {% for menu in fries %}
-                <form class="flex-item">
+                <form method="POST" class="flex-item">
+                    {% csrf_token %}
                     <div class="item">
                         <input
                                 class="title"
                                 type="text"
-                                value="{{ menu.name}}"
+                                value="{{ menu.name }}"
                                 name="name"
                                 readonly
                         />

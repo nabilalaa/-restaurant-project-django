@@ -12,16 +12,18 @@
                 <div class="inner">السعر</div>
             </div>
             {% for order in orders %}
-                    <form method="post" class="row-order">
-                        {% csrf_token %}
-                        <input type="text" name="name" value="{{ order.name }}" readonly>
-                        <input type="text" name="quantity" value="{{ order.quantity }}" readonly>
-                        <input type="text" name="price" value="{{ order.price }}" readonly>
-                        <button class="delete"><i class="fas fa-trash"></i></button>
-                    </form>
-                {% empty %}
+                <form method="post" class="row-order">
+                    {% csrf_token %}
+                    <input type="text" name="name" value="{{ order.name }}" readonly>
+                    <input type="text" name="quantity" value="{{ order.quantity }}" readonly>
+                    <input type="text" name="price" value="{{ order.price }}" readonly>
+                    <button class="delete"><i class="fas fa-trash"></i></button>
+                </form>
+            {% empty %}
                 <h2 class="message">عربتك فارغة</h2>
             {% endfor %}
+            <div>{{ total.total}}</div>
+
         </div>
     </div>
 {% endblock content %}
